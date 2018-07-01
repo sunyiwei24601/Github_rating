@@ -3,7 +3,7 @@ import requests
 import random
 from Gitrating.tools import *
 s=requests.Session()
-s.auth=('sunyiwei24601','b470bed42a5401214b26ca926c6dbe27589e1b0f')
+s.auth=('sunyiwei24601','7a2f4c41bb4597a4d001056d22eb0cd9ccf2a9d2')
 headers={
 # 'Authorization': 'token 03de74ada736153e374e5a9efb979c361c36463b',
 'Accept': 'application/vnd.github.v3.star+json,application/vnd.github.symmetra-preview+json,  application/vnd.github.squirrel-girl-preview'
@@ -16,7 +16,7 @@ project_details={}
 
 #把project分为两类，一种是只有一个repos的，还有是拥有多个repos的users或是orgs
 #根据分的长度来区分具体是多个repos还是单个，单个的就直接将获取的repos细节放入
-for project in projects[800:1300]:
+for project in projects[1300:1305]:
     url=project[1]
     name=project[0]
     if url:
@@ -37,10 +37,12 @@ for project in project_details:
     p=project_details[project]
     if p.get('organization_url'):
         #提取名称，先尝试organization，再尝试username
+        
         try:
             url=p.get('organization_url')
             parts=url.split('/')
             type=get_ogz(parts[-1])['type']
+            
         except:
             pass
         #得到他们目录下的repos
@@ -67,7 +69,8 @@ for project in project_details:
             error.append(repo)
             
 
-with open('data5.json','w') as f:
+with open('data6.json','w') as f:
+    print(project_details)
     json.dump(project_details,f)
     print(error)
     print(len(error))

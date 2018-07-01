@@ -7,8 +7,7 @@ s=requests.Session()
 
 def get_headers():
     tokens=[
-        '7646ec91e4625755edb7c9788a5346a68936f14e',
-        'cad0bbf3e6bfc03e2f505f1bba5e917e34d87de2'
+        '7a2f4c41bb4597a4d001056d22eb0cd9ccf2a9d2',
     ]
     headers={
         'Authorization':'token '+random.choice(tokens),
