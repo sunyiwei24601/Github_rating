@@ -20,7 +20,7 @@
 
 直接搜索'/users/username'可以获得许多信息
 
-![1529922169682](C:\Users\Carl\PycharmProjects\Gitrating/1529922169682.png)
+![1529922169682](1529922169682.png)
 
 
 
@@ -38,7 +38,7 @@ Only events created within the past 90 days will be included in timelines. Event
 
 `` GET /users/username/events``
 
-![1529922903398](C:\Users\Carl\PycharmProjects\Gitrating\1529922903398.png)
+![1529922903398](1529922903398.png)
 
 所有得到的都形如以上event类型，目标，repository具体的内容和时间都会标注在event里
 
